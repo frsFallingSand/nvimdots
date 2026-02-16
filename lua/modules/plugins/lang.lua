@@ -42,4 +42,8 @@ lang["chrisbra/csv.vim"] = {
 	lazy = true,
 	ft = "csv",
 }
+lang["mfussenegger/nvim-jdtls"] = {
+	lazy = true,
+	ft = { "java", "class" },
+}
 return lang
