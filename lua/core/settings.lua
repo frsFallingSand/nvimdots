@@ -124,7 +124,6 @@ settings["lsp_deps"] = {
 	"ruff",
 	"zuban",
 	"jdtls",
-	-- "kotlin_language_server",
 	"kotlin_lsp",
 }
 
