@@ -37,7 +37,7 @@ return function()
 
 		-- Optional: Specify additional JVM arguments for the kotlin-lsp server
 		jvm_args = {
-			"-Xmx4g", -- Increase max heap (useful for large projects)
+			"-Xmx4g -J-Djava.awt.headless=true", -- Increase max heap (useful for large projects)
 		},
 
 		-- Optional: Configure inlay hints (requires kotlin-lsp v261+)
