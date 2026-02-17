@@ -48,6 +48,14 @@ lang["mfussenegger/nvim-jdtls"] = {
 }
 lang["AlexandrosAlexiou/kotlin.nvim"] = {
 	lazy = true,
+	ft = { "kotlin", "kt" },
+	dependencies = {
+		"mason.nvim",
+		"mason-lspconfig.nvim",
+		"oil.nvim",
+		"trouble.nvim",
+	},
+	config = require("lang.kotlin"),
 }
 lang["oclay1st/gradle.nvim"] = {
 	cmd = { "Gradle", "GradleExec", "GradleInit", "GradleFavorites" },
