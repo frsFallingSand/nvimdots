@@ -123,6 +123,8 @@ settings["lsp_deps"] = {
 	"lua_ls",
 	"ruff",
 	"zuban",
+	"jdtls",
+	"kotlin_language_server",
 }
 
 -- General-purpose sources for none-ls to install during bootstrap.
