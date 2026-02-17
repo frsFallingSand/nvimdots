@@ -47,7 +47,8 @@ lang["mfussenegger/nvim-jdtls"] = {
 	ft = { "java", "class" },
 }
 lang["AlexandrosAlexiou/kotlin.nvim"] = {
-	ft = { "kotlin", "kt" },
+	lazy = true,
+	ft = { "kotlin" },
 	dependencies = {
 		"mason.nvim",
 		"mason-lspconfig.nvim",
