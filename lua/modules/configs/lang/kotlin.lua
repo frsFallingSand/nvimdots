@@ -19,7 +19,8 @@ return function()
 		--   Linux:   "/usr/lib/jvm/java-21-openjdk"
 		--   Windows: "C:\\Program Files\\Java\\jdk-21"
 		--   Env var: os.getenv("JAVA_HOME") or os.getenv("JDK21")
-		jre_path = nil, -- Use bundled JRE (recommended)
+		-- jre_path = nil, -- Use bundled JRE (recommended)
+		jre_path = os.getenv("JAVA_HOME"),
 
 		-- Optional: JDK for symbol resolution (analyzing your Kotlin code)
 		-- This is the JDK that your project code will be analyzed against
