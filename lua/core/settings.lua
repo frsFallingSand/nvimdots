@@ -124,8 +124,8 @@ settings["lsp_deps"] = {
 	"ruff",
 	"zuban",
 	"jdtls",
-	-- "kotlin_language_server",
 	"kotlin_lsp",
+	-- "nixd",
 }
 
 -- General-purpose sources for none-ls to install during bootstrap.
@@ -139,6 +139,9 @@ settings["null_ls_deps"] = {
 	"shfmt",
 	"stylua",
 	"vint",
+	"nixpkgs-fmt",
+	"nixfmt",
+	"nix_flake_fmt",
 }
 
 -- Debug Adapter Protocol (DAP) clients to install and configure during bootstrap.
