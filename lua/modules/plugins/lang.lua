@@ -44,7 +44,7 @@ lang["chrisbra/csv.vim"] = {
 }
 lang["mfussenegger/nvim-jdtls"] = {
 	lazy = true,
-	ft = { "java", "class" },
+	ft = { "java" },
 }
 lang["AlexandrosAlexiou/kotlin.nvim"] = {
 	ft = { "kotlin" },
