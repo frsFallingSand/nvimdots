@@ -52,7 +52,7 @@ lang["AlexandrosAlexiou/kotlin.nvim"] = {
 	dependencies = {
 		"mason.nvim",
 		"mason-lspconfig.nvim",
-		"oil.nvim",
+		-- "oil.nvim",
 		"trouble.nvim",
 	},
 	config = require("lang.kotlin"),
