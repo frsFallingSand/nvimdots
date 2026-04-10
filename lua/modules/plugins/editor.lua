@@ -98,10 +98,10 @@ editor["kylechui/nvim-surround"] = {
 		})
 	end,
 }
-editor["stevearc/oil.nvim"] = {
-	lazy = false,
-	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-}
+-- editor["stevearc/oil.nvim"] = {
+-- 	lazy = false,
+-- 	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+-- }
 ----------------------------------------------------------------------
 --                  :treesitter related plugins                    --
 ----------------------------------------------------------------------
