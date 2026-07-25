@@ -125,6 +125,7 @@ settings["lsp_deps"] = {
 	"zuban",
 	"jdtls",
 	"kotlin_lsp",
+	"ts_ls",
 	-- "nixd",
 }
 
