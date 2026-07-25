@@ -126,6 +126,7 @@ settings["lsp_deps"] = {
 	"jdtls",
 	"kotlin_lsp",
 	"ts_ls",
+	"nil_ls",
 	-- "nixd",
 }
 
