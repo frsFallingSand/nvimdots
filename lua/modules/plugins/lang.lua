@@ -42,4 +42,32 @@ lang["chrisbra/csv.vim"] = {
 	lazy = true,
 	ft = "csv",
 }
+lang["mfussenegger/nvim-jdtls"] = {
+	lazy = true,
+	ft = { "java" },
+}
+lang["AlexandrosAlexiou/kotlin.nvim"] = {
+	lazy = true,
+	ft = { "kotlin", "kt" },
+	dependencies = {
+		"mason.nvim",
+		"mason-lspconfig.nvim",
+		-- "oil.nvim",
+		"trouble.nvim",
+	},
+	config = require("lang.kotlin"),
+}
+lang["oclay1st/gradle.nvim"] = {
+	cmd = { "Gradle", "GradleExec", "GradleInit", "GradleFavorites" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"MunifTanjim/nui.nvim",
+	},
+	opts = {}, -- options, see default configuration
+	keys = {
+		{ "<leader>G", desc = "+Gradle", mode = { "n", "v" } },
+		{ "<leader>Gg", "<cmd>Gradle<cr>", desc = "Gradle Projects" },
+		{ "<leader>Gf", "<cmd>GradleFavorites<cr>", desc = "Gradle Favorite Commands" },
+	},
+}
 return lang

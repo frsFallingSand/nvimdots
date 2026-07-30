@@ -71,6 +71,9 @@ return function()
 			cmd = {
 				adapter = codecompanion_adapter,
 			},
+			cmd = {
+				adapter = "openrouter",
+			},
 		},
 		adapters = {
 			http = http_adapters,

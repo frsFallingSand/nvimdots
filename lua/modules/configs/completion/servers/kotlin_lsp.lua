@@ -1,0 +1,13 @@
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/kotlin_lsp.lua
+return {
+	filetypes = { "kotlin" },
+	cmd = { "kotlin-lsp", "--stdio" },
+	root_markers = {
+		"settings.gradle", -- Gradle (multi-project)
+		"settings.gradle.kts", -- Gradle (multi-project)
+		"pom.xml", -- Maven
+		"build.gradle", -- Gradle
+		"build.gradle.kts", -- Gradle
+		"workspace.json", -- Used to integrate your own build system
+	},
+}
