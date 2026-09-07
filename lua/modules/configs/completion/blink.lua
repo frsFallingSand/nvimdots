@@ -22,21 +22,19 @@ local source_labels = {
 	spell = "[SPELL]",
 }
 
--- local sources_default = { "lazydev", "lsp", "snippets", "path", "buffer", "spell", "tmux", "latex_symbols" }
-local sources_default = {
-	default = function()
-		local list = { "lazydev", "lsp", "snippets", "path", "buffer", "spell", "tmux", "latex_symbols" }
-		if vim.g.blink_rg_enabled then
-			list = { "lazydev", "lsp", "snippets", "path", "buffer", "ripgrep", "spell", "tmux", "latex_symbols" }
-		end
-		return list
-	end,
-}
-if use_copilot then
-	table.insert(sources_default, 1, "copilot")
-end
-if use_minuet then
-	table.insert(sources_default, 1, "minuet")
+local sources_default = function()
+	local list = { "lazydev", "lsp", "snippets", "path", "buffer" }
+	if vim.g.blink_rg_enabled then
+		table.insert(list, "ripgrep")
+	end
+	vim.list_extend(list, { "spell", "tmux", "latex_symbols" })
+	if use_copilot then
+		table.insert(list, 1, "copilot")
+	end
+	if use_minuet then
+		table.insert(list, 1, "minuet")
+	end
+	return list
 end
 
 ---@module 'blink.cmp'

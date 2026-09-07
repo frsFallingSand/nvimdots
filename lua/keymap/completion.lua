@@ -30,6 +30,7 @@ local mappings = {
 	},
 }
 bind.nvim_load_mapping(mappings.fmt)
+bind.nvim_load_mapping(mappings.ripgrep)
 
 --- The following code allows this file to be exported ---
 ---    for use with LSP lazy-loaded keymap bindings    ---
