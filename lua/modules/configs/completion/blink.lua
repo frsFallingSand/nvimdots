@@ -22,7 +22,16 @@ local source_labels = {
 	spell = "[SPELL]",
 }
 
-local sources_default = { "lazydev", "lsp", "snippets", "path", "buffer", "ripgrep", "spell", "tmux", "latex_symbols" }
+-- local sources_default = { "lazydev", "lsp", "snippets", "path", "buffer", "spell", "tmux", "latex_symbols" }
+local sources_default = {
+	default = function()
+		local list = { "lazydev", "lsp", "snippets", "path", "buffer", "spell", "tmux", "latex_symbols" }
+		if vim.g.blink_rg_enabled then
+			list = { "lazydev", "lsp", "snippets", "path", "buffer", "ripgrep", "spell", "tmux", "latex_symbols" }
+		end
+		return list
+	end,
+}
 if use_copilot then
 	table.insert(sources_default, 1, "copilot")
 end

@@ -3,10 +3,30 @@ local map_cr = bind.map_cr
 local map_callback = bind.map_callback
 local helpers = require("keymap.helpers")
 
+local root = vim.fs.root(vim.fn.getcwd(), ".git")
+vim.g.blink_rg_enabled = (root ~= nil and root ~= vim.env.HOME)
+
 local mappings = {
 	fmt = {
 		["n|<A-f>"] = map_cr("FormatToggle"):with_noremap():with_silent():with_desc("formatter: Toggle format on save"),
 		["n|<A-S-f>"] = map_cr("Format"):with_noremap():with_silent():with_desc("formatter: Format buffer manually"),
+	},
+	ripgrep = {
+		["n|<leader>tr"] = map_callback(function()
+				vim.g.blink_rg_enabled = not vim.g.blink_rg_enabled
+				local status = vim.g.blink_rg_enabled and "[Enable]" or "[Disable]"
+				vim.notify(status .. "ripgrep", vim.log.levels.INFO)
+			end)
+			:with_noremap()
+			:with_silent()
+			:with_desc("blink: Toggle ripgrep auto-completion"),
+
+		["i|<M-r>"] = map_callback(function()
+				require("blink.cmp").show({ providers = { "ripgrep" } })
+			end)
+			:with_noremap()
+			:with_silent()
+			:with_desc("blink: Manually trigger ripgrep search"),
 	},
 }
 bind.nvim_load_mapping(mappings.fmt)
