@@ -92,6 +92,13 @@ tool["ibhagwan/fzf-lua"] = {
 	config = require("tool.fzf-lua"),
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 }
+tool["glacambre/firenvim"] = {
+	lazy = not vim.g.started_by_firenvim,
+	build = function()
+		vim.fn["firenvim#install"](0)
+	end,
+	config = require("tool.firenvim"),
+}
 
 ----------------------------------------------------------------------
 --                        Telescope Plugins                         --
