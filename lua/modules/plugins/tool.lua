@@ -95,6 +95,7 @@ tool["ibhagwan/fzf-lua"] = {
 tool["glacambre/firenvim"] = {
 	lazy = not vim.g.started_by_firenvim,
 	build = function()
+		require("lazy").load({ plugins = { "firenvim" }, wait = true })
 		vim.fn["firenvim#install"](0)
 	end,
 	config = require("tool.firenvim"),
