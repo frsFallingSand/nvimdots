@@ -81,6 +81,44 @@ return function()
 			vim.o.columns = 110
 		end, { desc = "Expand Firenvim window" })
 
+		-- 1. 创建专门的文件类型自动识别组
+		local ft_group = vim.api.nvim_create_augroup("FirenvimFiletypes", { clear = true })
+
+		-- GitHub / GitLab / Reddit / 各大论坛：一律识别为 Markdown
+		vim.api.nvim_create_autocmd("BufEnter", {
+			group = ft_group,
+			pattern = {
+				"github.com_*.txt",
+				"gitlab.com_*.txt",
+				"reddit.com_*.txt",
+				"stackoverflow.com_*.txt",
+				"v2ex.com_*.txt",
+			},
+			callback = function()
+				vim.bo.filetype = "markdown"
+			end,
+		})
+
+		-- Overleaf：识别为 LaTeX
+		vim.api.nvim_create_autocmd("BufEnter", {
+			group = ft_group,
+			pattern = "overleaf.com_*.txt",
+			callback = function()
+				vim.bo.filetype = "tex"
+			end,
+		})
+
+		-- 如果是纯文本类型，默认升级为 markdown 语法高亮
+		vim.api.nvim_create_autocmd("BufEnter", {
+			group = ft_group,
+			pattern = "*",
+			callback = function()
+				if vim.bo.filetype == "text" or vim.bo.filetype == "" then
+					vim.bo.filetype = "markdown"
+				end
+			end,
+		})
+
 		-- 快捷键：连按两次 Esc 将焦点交还给浏览器页面 / Vimium C
 		vim.keymap.set("n", "<Esc><Esc>", ":call firenvim#focus_page()<CR>", { silent = true })
 	end
