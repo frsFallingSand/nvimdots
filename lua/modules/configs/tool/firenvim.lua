@@ -121,5 +121,8 @@ return function()
 
 		-- 快捷键：连按两次 Esc 将焦点交还给浏览器页面 / Vimium C
 		vim.keymap.set("n", "<Esc><Esc>", ":call firenvim#focus_page()<CR>", { silent = true })
+
+		-- 按 <leader>ft 呼出 fzf-lua 快速模糊搜索切换文件类型
+		vim.keymap.set("n", "<leader>ft", "<cmd>FzfLua filetypes<CR>", { desc = "Switch FileType" })
 	end
 end
